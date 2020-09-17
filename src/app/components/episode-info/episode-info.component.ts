@@ -7,6 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./episode-info.component.sass'],
 })
 export class EpisodeInfoComponent implements OnInit {
+  //definición de datos que comunica el componente padre
   constructor(
     public dialogRef: MatDialogRef<EpisodeInfoComponent>,
     @Inject(MAT_DIALOG_DATA) public dataEpisode: any

@@ -14,6 +14,9 @@ import { EpisodeInfoComponent } from '../episode-info/episode-info.component';
 })
 export class DialogTemplateComponent implements OnInit {
   public dataEpisode: any[] = [];
+
+  //definición de datos manejados por el componente "MatDialog"
+  //para poder realizar comunicación de datos entre el modal y el componente padre
   constructor(
     public dialogRef: MatDialogRef<DialogTemplateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -25,6 +28,8 @@ export class DialogTemplateComponent implements OnInit {
     this.setEpisodiesObj();
   }
 
+  //función que organiza los datos para generar un arreglo y asignar ese arreglo final
+  //a la variable "dataEpisode"
   setEpisodiesObj() {
     let response = [];
     this.data.episode.map((episode) => {
@@ -37,6 +42,8 @@ export class DialogTemplateComponent implements OnInit {
     this.dataEpisode = response;
   }
 
+  //Servicio que muestra el dialog donde vemos información del episodio
+  //se consulta un servicio para otener la data y que sea enviada al componente matDialog
   showEpisodeInfo(data) {
     this.characterServices.GET(data.url).subscribe((info) => {
       const dialogRef = this.dialog.open(EpisodeInfoComponent, {

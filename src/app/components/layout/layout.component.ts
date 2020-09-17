@@ -8,23 +8,28 @@ import { CharactersService } from 'src/app/services/characters/characters.servic
   styleUrls: ['./layout.component.sass'],
 })
 export class LayoutComponent implements OnInit {
+  //definición de variables
   public characters: IResults[];
   public items;
   public page = 1;
   public count;
 
-  constructor(private characterServices: CharactersService) {
+  //elementos funcionales que usaremos
+  constructor(private characterServices: CharactersService) {}
+
+  //función inicial al renderizar el componente
+  ngOnInit(): void {
     this.getCharactersPage(this.page);
   }
 
-  ngOnInit(): void {}
-
+  //función que consulta el servicio para obtener todos los personajes
   getCharactersPage(page) {
     this.characterServices
       .getCharactersPaginator(page)
       .subscribe((listCharacters: ICharacters) => {
         this.characters = listCharacters.results;
         this.count = listCharacters.info.count;
+        //construcción del arreglo "item"
         this.items = this.characters.map((item) => {
           return {
             id: item.id,
@@ -42,10 +47,9 @@ export class LayoutComponent implements OnInit {
             showDetail: true,
           };
         });
-        console.log(this.items);
       });
   }
-
+  //función que consulta el servicio al cambiar de página
   changePage(event) {
     this.getCharactersPage(event);
   }

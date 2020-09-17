@@ -7,7 +7,10 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./pagination.component.sass'],
 })
 export class PaginationComponent implements OnInit {
+  //definición del evento de salida
+  //tipo EventEmitter para ser escuchado
   @Output() changePage: EventEmitter<any> = new EventEmitter<any>();
+  //dato que se injecta al componente
   @Input() length;
 
   public pageSize = 20;
@@ -18,6 +21,7 @@ export class PaginationComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  //evento que lanza el changePage con el que se cambia la página
   changePageController(event: PageEvent) {
     this.changePage.emit(event.pageIndex + 1);
   }
