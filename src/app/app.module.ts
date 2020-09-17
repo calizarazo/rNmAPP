@@ -12,6 +12,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { LayoutComponent } from './components/layout/layout.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { DialogTemplateComponent } from './components/dialog-template/dialog-template.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatListModule } from '@angular/material/list';
+import { EpisodeInfoComponent } from './components/episode-info/episode-info.component';
+import { DialogEpisodeComponent } from './components/dialog-episode/dialog-episode.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -19,6 +26,10 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     LayoutComponent,
     GridCardComponent,
     PaginationComponent,
+    DialogTemplateComponent,
+    EpisodeInfoComponent,
+    DialogEpisodeComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +40,9 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     MatCardModule,
     FlexLayoutModule,
     MatPaginatorModule,
+    MatDialogModule,
+    MatListModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

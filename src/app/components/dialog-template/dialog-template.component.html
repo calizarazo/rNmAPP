@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>{{ data.name }}</h2>
+<h3>Especie: {{ data.attributes.value }}</h3>
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div fxFlex="100%">
+    <mat-dialog-content class="mat-typography" fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%">
+        <mat-card>
+          <img mat-card-image src="{{ data.image }}" alt="Photo of Character" />
+          <mat-card-content>
+            <mat-list>
+              <mat-list-item>Origen:&nbsp; {{data.origin}}</mat-list-item>
+              <mat-list-item>Ubicación actual:&nbsp; {{data.headline}}</mat-list-item>
+              <mat-list-item>Género:&nbsp; {{data.gender}}</mat-list-item>
+              <mat-list-item>Estado:&nbsp; {{data.status}}</mat-list-item>
+            </mat-list>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%">
+        <h2 class="textBold"> Lista Capítulos: </h2>
+        <mat-list>
+          <mat-list-item class="pointer" (click)="showEpisodeInfo(episode)" *ngFor="let episode of dataEpisode">
+            <span>Episodio #: {{ episode.number }}</span>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </mat-dialog-content>
+  </div>
+</div>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close color="primary">Cerrar</button>
+</mat-dialog-actions>

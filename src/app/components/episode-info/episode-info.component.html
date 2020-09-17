@@ -1,0 +1,31 @@
+<!-- air_date: "January 27, 2014"
+characters: ["https://rickandmortyapi.com/api/character/1", "https://rickandmortyapi.com/api/character/2",…]
+created: "2017-11-10T12:56:34.339Z"
+episode: "S01E06"
+id: 6
+name: "Rick Potion #9"
+url: "https://rickandmortyapi.com/api/episode/6" -->
+
+<h2 mat-dialog-title>Capítulo: {{ dataEpisode.id }}</h2>
+<div>
+  <mat-dialog-content class="mat-typography">
+    <div>
+      <mat-card>
+        <mat-list>
+          <mat-list-item>
+            <span class="textBold">Nombre capítulo:&nbsp; </span> {{ dataEpisode.name }}
+          </mat-list-item>
+          <mat-list-item>
+            <span class="textBold">Fecha de estreno:&nbsp; </span> {{ dataEpisode.air_date }}
+          </mat-list-item>
+          <mat-list-item>
+            <span class="textBold">Número de episodio:&nbsp; </span> {{ dataEpisode.episode }}
+          </mat-list-item>
+        </mat-list>
+      </mat-card>
+    </div>
+  </mat-dialog-content>
+</div>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>
