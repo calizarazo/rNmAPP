@@ -1,9 +1,7 @@
+<app-header></app-header>
 <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
   <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let data of items">
     <app-grid-card [dataCharacter]="data"> </app-grid-card>
   </div>
-  <app-pagination
-    [length]="count"
-    (changePage)="changePage($event)"
-  ></app-pagination>
+  <app-pagination [length]="count" (changePage)="changePage($event)"></app-pagination>
 </div>

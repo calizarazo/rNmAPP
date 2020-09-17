@@ -12,4 +12,6 @@ export class CharactersService {
 
   getCharactersPaginator = (page) =>
     this.http.get(`${this.allRequest}?page=${page}`);
+
+  GET = (url) => this.http.get(`${url}`);
 }

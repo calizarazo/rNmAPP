@@ -3,7 +3,7 @@
     [length]="length"
     [pageSize]="pageSize"
     [pageSizeOptions]="pageSizeOptions"
-    (page)="pageEvent = changePageController($event)"
+    (page)="changePageController($event)"
   >
   </mat-paginator>
   <div *ngIf="pageEvent">

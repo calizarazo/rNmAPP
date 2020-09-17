@@ -31,6 +31,10 @@ export class LayoutComponent implements OnInit {
             image: item.image,
             name: item.name,
             headline: item.location.name,
+            episode: item.episode,
+            status: item.status,
+            gender: item.gender,
+            origin: item.origin.name,
             attributes: {
               name: 'Especie',
               value: item.species,
